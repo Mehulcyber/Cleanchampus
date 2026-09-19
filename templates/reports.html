@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CleanCampus - Reports</title>
+</head>
+<body>
+
+    <h1>🗑️ CleanCampus Reports</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Waste Type</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+
+        {% for report in reports %}
+        <tr>
+            <td>{{ report.id }}</td>
+            <td>{{ report.waste_type }}</td>
+            <td>{{ report.location }}</td>
+            <td>{{ report.description }}</td>
+            <td>{{ report.status }}</td>
+            <td>{{ report.created_at }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

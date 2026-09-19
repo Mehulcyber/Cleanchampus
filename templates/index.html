@@ -1,51 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>CleanCampus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanCampus - Waste Reporting</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: #1f7a4d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f7a4d;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: #1f7a4d;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #145c39;
+        }
+
+        .success {
+            margin-top: 20px;
+            padding: 12px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 7px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>♻️ CleanCampus</h1>
-    <h2>Smart Waste Reporting System</h2>
+    <div class="header">
+        <h1>♻️ CleanCampus</h1>
+        <p>Smart Waste Reporting System</p>
+    </div>
 
-    <p>Report waste or cleanliness problems on campus.</p>
+    <div class="container">
 
-    <form>
+        <h2>Report Waste</h2>
 
-        <label>Waste Type:</label>
+        <form method="POST" enctype="multipart/form-data">
 
-        <select>
-            <option>Plastic Waste</option>
-            <option>Food Waste</option>
-            <option>E-Waste</option>
-            <option>Overflowing Dustbin</option>
-            <option>Other</option>
-        </select>
+            <label>Waste Type</label>
 
-        <br><br>
+            <select name="waste_type" required>
+                <option value="">Select Waste Type</option>
+                <option value="Plastic">Plastic</option>
+                <option value="Food Waste">Food Waste</option>
+                <option value="Paper">Paper</option>
+                <option value="E-Waste">E-Waste</option>
+                <option value="Other">Other</option>
+            </select>
 
-        <label>Location:</label>
-        <input type="text" placeholder="Example: College Canteen">
+            <label>Location</label>
 
-        <br><br>
+            <input
+                type="text"
+                name="location"
+                placeholder="Example: College Canteen"
+                required
+            >
 
-        <label>Description:</label>
-        <br>
+            <label>Description</label>
 
-        <textarea rows="5" cols="40"
-            placeholder="Describe the problem..."></textarea>
+            <textarea
+                name="description"
+                placeholder="Describe the waste problem..."
+                required
+            ></textarea>
 
-        <br><br>
+            <button type="submit">
+                🚀 Submit Waste Report
+            </button>
+            <label>Waste Photo:</label>
+<input type="file" name="photo" accept="image/*">
+<br><br>
 
-        <label>Upload Photo:</label>
-        <input type="file">
+        </form>
 
-        <br><br>
+        {% if message %}
+        <div class="success">
+            {{ message }}
+        </div>
+        {% endif %}
 
-        <button type="submit">Submit Report</button>
-
-    </form>
+    </div>
 
 </body>
 </html>
