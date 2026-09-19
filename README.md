@@ -6,17 +6,20 @@ Smart Waste Reporting System for College Campus.
 
 **In Progress 🚀**
 
+# 🎯 Current Features
+## 🚧 Project Status
+
+Completed ✅
+
 ## 🎯 Current Features
 
 - [x] Basic Flask website
-- [ ] Waste reporting
-- [ ] MySQL database
-- [ ] Photo upload
-- [ ] Student dashboard
-- [ ] Admin dashboard
-- [ ] AI waste detection
-- [ ] QR code reporting
-- [ ] Analytics
+- [x] Waste reporting
+- [x] MySQL database
+- [x] Photo upload
+- [x] Student dashboard
+- [x] Admin dashboard
+- [x] Analytics
 
 ## 🛠️ Tech Stack
 
@@ -25,8 +28,7 @@ Smart Waste Reporting System for College Campus.
 - MySQL
 - HTML
 - CSS
-- JavaScript
-
+- JavaScript 
 ## 🚀 Future Scope
 
 - AI-based waste detection
